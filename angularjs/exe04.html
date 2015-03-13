@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="workshopBeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ workshop }}</title>
+</head>
+<body>
+  
+  <label for="nome">
+    Nome:
+    <input type="text" data-ng-model="nome">
+  </label>
+
+  <h1>Olá, {{ nome }}</h1>
+
+  <label for="workshop">
+    Workshop:
+    <input type="text" data-ng-model="workshop">
+  </label>
+
+  <script src="angular.min.js"></script>
+  <script>
+    // iniciando o módulo com o nome da nossa aplicação
+    angular.module('workshopBeMEAN', []);
+  </script>
+</body>
+</html>

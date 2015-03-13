@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="workshopBeMEAN">
+<head>
+  <meta charset="UTF-8">
+  <title>be MEAN</title>
+</head>
+<body>
+  
+  <label for="nome">
+    Nome:
+    <input type="text" data-ng-model="nome">
+  </label>
+
+  <h1>Olá, {{ nome | reverseString | uppercase }}</h1>
+
+  <script src="angular.min.js"></script>
+  <script>
+    // iniciando o módulo com o nome da nossa aplicação
+    angular.module('workshopBeMEAN', [])
+      .filter('reverseString', function() {
+        return function (text) {
+          if (text) {
+            return text.split('').reverse().join('');
+          };
+        };
+      });
+  </script>
+</body>
+</html>
