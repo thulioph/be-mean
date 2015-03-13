@@ -1,0 +1,22 @@
+<h2>View - Workshop beMEAN</h2>
+<p>{{ msg }}</p>
+
+<table>
+  <thead>
+    <tr>
+      <th data-ng-click="ordenar('name')">Name</th>
+      <th data-ng-click="ordenar('price')">Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr data-ng-repeat="cerveja in cervejas | orderBy:predicate:reverse">
+      <td>
+        <a href="#/beers/{{cerveja._id}}">
+          {{ cerveja.name }}
+        </a>
+      </td>
+      <td>{{ cerveja.price }}</td>
+    </tr>
+  </tbody>
+</table>
