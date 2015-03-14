@@ -23,7 +23,7 @@ var Controller = {
   retrieve: function(req, res) {
       var query = {};
 
-      Beer.find(function (err, data) {
+      Beer.find(query, function (err, data) {
         if(err) {
           console.log(err);
           res.json('Erro:' + err); // o res.json() vai pra dentro da função assincrona porque se for fora, ele finaliza antes de responder.
@@ -37,7 +37,7 @@ var Controller = {
   get: function(req, res) {
       var query = {_id: req.params.id}; // array das variaveis de url que você coloca
 
-      Beer.findOne(function (err, data) {
+      Beer.findOne(query, function (err, data) {
         if(err) {
           console.log(err);
           res.json('Erro:' + err); // o res.json() vai pra dentro da função assincrona porque se for fora, ele finaliza antes de responder.
@@ -80,7 +80,7 @@ var Controller = {
   renderList: function(req, res) {
     var query = {};
 
-    Beer.find(function (err, data) {
+    Beer.find(query, function (err, data) {
       if(err) {
         console.log(err);
         res.render('beers/error', { error: err });
@@ -94,7 +94,7 @@ var Controller = {
   renderGet: function(req, res) {
     var query = {_id: req.params.id}; // array das variaveis de url que você coloca
 
-    Beer.findOne(function (err, data) {
+    Beer.findOne(query, function (err, data) {
       if(err) {
         console.log(err);
         res.render('beers/error', { error: err });
@@ -112,7 +112,7 @@ var Controller = {
   renderUpdate: function(req, res) {
     var query = {_id: req.params.id}; // array das variaveis de url que você coloca
 
-    Beer.findOne(function (err, data) {
+    Beer.findOne(query, function (err, data) {
       if(err) {
         console.log(err);
         res.render('beers/error', { error: err });
@@ -126,7 +126,7 @@ var Controller = {
   renderRemove: function(req, res) {
     var query = {_id: req.params.id}; // array das variaveis de url que você coloca
 
-    Beer.findOne(function (err, data) {
+    Beer.findOne(query, function (err, data) {
       if(err) {
         console.log(err);
         res.render('beers/error', { error: err });
